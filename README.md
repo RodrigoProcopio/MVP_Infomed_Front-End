@@ -20,7 +20,7 @@ InfoMed é uma aplicação front-end destinada a pessoas que cuidam de idosos, p
 
 ## Diagrama
 
-![Diagrama MVP InfoMed ](caminho/para/a/imagem.png)
+![Diagrama MVP InfoMed ](https://github.com/RodrigoProcopio/MVP_Infomed_Front-End/blob/main/img/readme.png)
 
 ## Requisitos
 
@@ -121,4 +121,4 @@ Este projeto foi desenvolvido por Rodrigo Procópio e pode ser encontrado no [Gi
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE]() para obter detalhes.
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](https://github.com/RodrigoProcopio/MVP_Infomed_Front-End/blob/main/LICENSE.md) para obter detalhes.
