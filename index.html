@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css"> <!-- Importa o arquivo de estilo CSS -->
+
+    <title>MVP InfoMed</title>
+
+</head>
+
+<body style="background-image: url(./img/background.png)">
+
+    <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h2>InfoMed</h2> <!-- Título do cabeçalho -->
+        </div>
+    </header>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- Menu de Navegação -->
+    <nav>
+        <span href="#index" onclick="showSection('index')" id="indexLink"></span>
+        <a href="#home" onclick="showSection('home')" id="homeLink" style="display: none;">Home</a>
+        <a href="#cadastrar-medicamento" onclick="showSection('cadastrar-medicamento')" id="medicamentoLink" style="display: none;">Medicamentos</a>
+        <a href="#agenda-de-consultas" onclick="showSection('agenda-de-consultas')" id="agendaLink" style="display: none;">Agenda de Consultas</a>
+        <button id="logoutButton" class="Btn" onclick="logout()" style="display: none;">Logout</button>
+    </nav>
+
+       <!-- Conteúdo da Página -->
+       <div class="container" id="index" style="display: block;"> <!-- Mostra a seção "Home" por padrão -->
+        <p class="centered-text">Faça login para aproveitar as funcionalidades do sistema!</p>
+        <button id="loginButton" class="Btn" onclick="login()">Login</button>
+    </div>
+
+    <!-- Conteúdo da Home -->
+    <div class="container" id="home" style="display: none;"> <!-- Mostra a seção "Home" por padrão -->
+        <p class="centered-text">Bem-vindo! Aqui você pode gerenciar seus medicamentos e agendar suas consultas.</p>
+        <img id="backgroundImage" src="./img/Home.png">
+    </div>
+    <!-- Conteúdo de Medicamentos -->    
+    <div class="container" id="cadastrar-medicamento" style="display: none;"> <!-- Oculta por padrão -->
+        <p class="centered-text">Aqui você pode cadastrar, pesquisar e excluir seus medicamentos.</p>
+        
+        <!-- Botões de interação -->
+        <section class="intButtons">
+                 <button id="toggleListButton" class="Btn" onclick="toggleList()">Atualizar Lista</button>
+            <button id="toggleSearchButton" class="Btn" onclick="toggleSearchBox()">Pesquisar Medicamento</button>
+            <button id="insertMedicineButton" class="Btn" onclick="toggleInsertMedicine()">Inserir Medicamento</button>
+        </section>
+
+        <section class="srchItem">
+            <div id="searchBox" style="display: none;"> <!-- Oculta por padrão -->
+                <input type="text" id="srchMedicine" placeholder="Buscar medicamento">
+                <button onclick="searchMedicine()" class="Btn">Buscar</button>
+            </div>
+        </section>
+        
+        <!-- Opções para adicionar um novo item -->
+        <section class="newItem">
+            <input type="text" id="newMedicine" placeholder="Medicamento">
+            <input type="text" id="newPosology" placeholder="Posologia">
+            <input type="text" id="newDoctor" placeholder="Médico(a)">
+            <input type="text" id="newSpecialty" placeholder="Especialidade">
+            <button onclick="newItem()" class="Btn">Inserir</button>
+        </section>
+            
+        <!--Tabela com itens existentes -->
+        <section class="items">
+            <table id="myTable">
+                 <tr>
+                     <th>Medicamento</th>
+                     <th>Posologia</th>
+                     <th>Médico(a)</th>
+                     <th>Especialidade</th>
+                     <th>Excluir</th>
+                 </tr>
+                 <!-- Linhas da tabela quando houver -->
+            </table>
+        </section>
+    </div>
+
+    <!-- Conteúdo da Agenda de Consultas -->    
+    <div class="container" id="agenda-de-consultas" style="display: none;"> <!-- Oculta por padrão -->
+        <p class="centered-text">Aqui você pode gerenciar suas consultas.</p>
+        <!-- Formulário para adicionar consulta -->
+        <section class="newConsult centered">
+            <input type="text" id="newDoctor_name" placeholder="Médico(a)">
+            <input type="text" id="newSpclty" placeholder="Especialidade">
+            <input type="date" id="newDate">
+            <input type="time" id="newTime">
+            <button id="addConsultButton" class="Btn" onclick="newConsult()">Agendar Consulta</button>
+        </section>
+
+        <!-- Formulário para editar consulta -->
+        <section id="editForm" class="editConsult centered" style="display: none;">
+            <input type="text" id="editId" placeholder="Id">
+            <input type="text" id="IdGoogle" placeholder="IdGoogle">
+            <input type="text" id="eTagGoogle" placeholder="eTagGoogle">
+            <input type="text" id="editDoctor_name" placeholder="Médico(a)">
+            <input type="text" id="editSpclty" placeholder="Especialidade">
+            <input type="date" id="editDate">
+            <input type="time" id="editTime">
+            <button id="updateConsultButton" class="Btn" onclick="updateConsult()">Atualizar Consulta</button>
+            <button id="cancelEditConsultButton" class="Btn">Cancelar Edição</button>
+        </section>
+
+        <!-- Tabela de consultas agendadas -->
+        <section class="scheduledConsults">
+            <table id="consultTable">
+                <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Médico(a)</th>
+                      <th>Especialidade</th>
+                      <th>Data</th>
+                      <th>Hora</th>
+                      <th>Editar</th>
+                      <th>Excluir</th>
+                      <th>Google Agenda</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <!-- Linhas da tabela de consultas serão inseridas dinamicamente -->
+                </tbody>
+              </table>
+            </section>
+    </div>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.19/auth0-spa-js.production.js"></script>
+    <script src="scripts.js"></script> <!-- Importa o arquivo de script JavaScript -->
+
+    <footer>
+        <!-- Botão "Voltar ao Topo" -->
+        <div id="buttonContainer">
+            <button id="backToTopButton" class="Btn" onclick="scrollToTop()">Voltar ao Topo</button>
+        </div>
+    
+        <!-- Informações de direitos autorais e redes sociais -->
+        <div class="copyright">
+            &copy; 2024 Rodrigo Procópio. Todos os direitos reservados. <!-- Informações de direitos autorais -->
+        </div>
+        <div class="social-media">
+            Siga-me nas redes sociais:
+            <a href="https://www.linkedin.com/in/rodrigoprocopio/" target="_blank">LinkedIn</a> <!-- Link para o LinkedIn -->
+            Visite meu GitHub:
+            <a href="https://github.com/RodrigoProcopio" target="_blank">GitHub</a> <!-- Link para o GitHub -->
+        </div>
+    </footer>
+</body>
+</html>

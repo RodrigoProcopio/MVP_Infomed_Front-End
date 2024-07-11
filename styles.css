@@ -1,0 +1,409 @@
+/* Estilo para o cabeçalho */
+header {
+    padding: 10px;
+    text-align: center;
+    color: rgb(3, 64, 66);
+}
+
+.title h2 {
+    margin: 0;
+    font-size: 48px;
+}
+
+/* Estilo para a imagem Home */
+#backgroundImage {
+    max-width: 10%; 
+    height: 10%; 
+}
+
+/* Estilo para o menu de navegação */
+nav {
+    background-color: rgb(4, 105, 108);
+    overflow: hidden;
+    text-align: center; 
+}
+
+nav a {
+    display: inline-block; 
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #97d8cf;
+    color: black;
+}
+
+/* Estilo para o conteúdo da página */
+body {
+    background-color: rgb(23, 118, 133);
+    font-size: 18px;
+}
+
+/* Estilo das seções */
+.intButtons, .srchItem {
+    padding: 30px;
+    color: white;
+    text-align: center;
+}
+
+.newItem {
+    display: none; /* Oculta a seção de novo item por padrão */
+    padding: 30px;
+    color: white;
+    text-align: center;
+}
+
+/* Estilo dos campos de entrada de texto */
+input[type="text"] {
+    margin: 0;
+    border: 1px solid rgb(4, 105, 108);
+    width: 15%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.searchBox input[type="text"] {
+    margin: 0;
+    border: 1px solid rgb(4, 105, 108);
+    width: 15%;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Estilo dos botões */
+.Btn {
+    padding: 9px 10px;
+    background-color: rgb(4, 105, 108);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.Btn:hover {
+    background-color: #15a526; 
+}
+
+/* Estilo da tabela */
+table {
+    border: 1px solid rgb(4, 105, 108);
+    border-collapse: collapse;
+    font-size: 12px;
+    transition: 0.2s;
+    text-align: center;
+    font-family: tahoma;
+    background-color: white;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+th, td {
+    border: 1px solid rgb(4, 105, 108);
+    padding: 5px;
+    font-size: 14px;
+}
+
+tr:nth-child(odd) {
+    background-color: #74ccbd; 
+}
+
+th:nth-child(1) {
+    width: 50%;
+}
+
+tr:hover {
+    background: rgb(114, 187, 198); 
+}
+
+/* Estilo do botão de fechar */
+.close {
+    background-color: #f38b8b;
+    border-color: #f38b8b;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.close:hover {
+    color: #ff0202;
+    font-weight: bolder;
+}
+
+/* Estilos para o footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#buttonContainer {
+    text-align: right;
+}
+
+#backToTopButton {
+    font-size: 14px;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #012e55;
+}
+
+.social-media {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.social-media a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #002aff;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+.centered-text {
+    text-align: center;
+}
+
+/* Alinhamento imagem home */
+#home img {
+    max-width: 100%;
+    height: 700px;
+    display: block;
+    margin: 20px auto; 
+}
+
+/* Estilo da tabela de consultas agendadas */
+#consultTable {
+    border: 1px solid rgb(4, 105, 108);
+    border-collapse: collapse;
+    font-size: 12px;
+    transition: 0.2s;
+    text-align: center;
+    font-family: tahoma;
+    background-color: white;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#consultTable th:first-child { /* Coluna Id) */
+    width: 5%; 
+}
+
+#consultTable td:nth-child(2) { /* Coluna Médico(a) */
+    width: 25%; 
+}
+
+#consultTable td:nth-child(3) { /* Coluna Especialidade */
+    width: 25%; 
+}
+
+#consultTable td:nth-child(4) { /* Coluna Data */
+    width: 10%; 
+}
+
+#consultTable td:nth-child(5) { /* Coluna Hora */
+    width: 10%; /
+}
+
+#consultTable td:nth-child(6) { /* Coluna Editar */
+    width: 5%; 
+}
+
+#consultTable td:nth-child(7) { /* Coluna Cancelar */
+    width: 5%; 
+}
+
+#consultTable td:nth-child(8) { /* Coluna Google Agenda*/
+    width: 5%; 
+}
+.centered {
+    text-align: center;
+    margin: 0 auto;
+    width: 60%; 
+}
+
+/* Estilo dos campos de entrada de texto */
+input[type="text"], input[type="date"], input[type="time"] {
+    margin: 0;
+    border: 1px solid rgb(4, 105, 108);
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px; 
+}
+
+
+/* Estilo do botão de cancelar consulta */
+.cancelar {
+    background-color: #f38b8b;
+    border-color: #f38b8b;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.cancelar:hover {
+    color: #ff0202;
+    font-weight: bolder;
+}
+
+/* Estilo do botão de editar consulta */
+.editar {
+    background-color: #e28e5e;
+    border-color: #e28e5e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.editar:hover {
+    color: #ec4921;
+    font-weight: bolder;
+}
+
+
+#cancelEditConsultButton {
+    background-color: #f38b8b;
+    border-color: #f38b8b;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bolder;
+    padding: 9px 10px;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#cancelEditConsultButton:hover {
+    color: #ff0202;
+    font-weight: bolder;
+}
+
+
+.editar {
+    background-color: #e28e5e;
+    border-color: #e28e5e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.editar:hover {
+    color: #ec4921;
+    font-weight: bolder;
+}
+
+#cancelEditConsultButton {
+    background-color: #e28e5e;
+    border-color: #e28e5e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bolder;
+    transition: 0.3s; 
+}
+
+#cancelEditConsultButton:hover {
+    background-color: #ec4921;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+#editConsultButton {
+    background-color: rgb(4, 105, 108);
+    border-color: rgb(4, 105, 108);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 9px 10px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#editConsultButton:hover {
+    background-color: #15a526;
+    color: #ffffff;
+}
+
+/* Oculta visualmente a coluna do ID na tabela de consultas */
+#consultTable th:first-child,
+#consultTable td:first-child {
+    display: none;
+}
+
+/* Estilo botão de Login */
+#loginButton {
+    padding: 9px 10px;
+    background-color: rgb(39, 170, 61);
+    border-color: rgb(39, 170, 61);
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 2px;
+    text-align: center;
+}
+
+#loginButton:hover {
+    background-color: #5df16e;
+    color: white;
+}
+
+.container {
+    text-align: center; /* Centraliza o conteúdo dentro do container */
+}
+
+/* Estilo botão de Logout */
+#logoutButton {
+    padding: 9px 10px;
+    background-color: #ff6347;
+    border-color: #ff6347;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 2px;
+    margin-top: 5px; 
+    margin-right: 10px;
+    float: right;
+
+}
+
+#logoutButton:hover {
+    background-color: red;
+    color: white;
+}
+
+/* Estilo do botão de Agenda */
+.agnd {
+    background-color: #014cad;
+    border-color:  #014cad;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.agnd:hover {
+    background-color: #257ae9;
+    border-color: #257ae9;
+    font-weight: bolder;
+}
